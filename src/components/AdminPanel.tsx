@@ -123,10 +123,7 @@ export default function AdminPanel({ onClose }: AdminPanelProps) {
 
   // Sync leads from active Supabase database
   const syncLeadsFromSupabase = async () => {
-    const isSupabaseConfigured = integrationConfig.supabaseUrl && 
-      integrationConfig.supabaseUrl !== 'https://xyz.supabase.co' && 
-      integrationConfig.supabaseAnonKey && 
-      integrationConfig.supabaseAnonKey !== 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSJ9...';
+    const isSupabaseConfigured = Boolean(integrationConfig.supabaseUrl && integrationConfig.supabaseAnonKey);
 
     if (!isSupabaseConfigured) {
       alert('Por favor, configure credenciais válidas do Supabase primeiro na aba "CONEXÕES & WEBHOOKS".');
@@ -236,10 +233,7 @@ export default function AdminPanel({ onClose }: AdminPanelProps) {
     localStorage.setItem('sensesales_leads', JSON.stringify(updated));
 
     // Supabase update check
-    const isSupabaseConfigured = integrationConfig.supabaseUrl && 
-      integrationConfig.supabaseUrl !== 'https://xyz.supabase.co' && 
-      integrationConfig.supabaseAnonKey && 
-      integrationConfig.supabaseAnonKey !== 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSJ9...';
+    const isSupabaseConfigured = Boolean(integrationConfig.supabaseUrl && integrationConfig.supabaseAnonKey);
 
     if (isSupabaseConfigured) {
       try {

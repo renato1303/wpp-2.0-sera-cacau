@@ -44,8 +44,8 @@ export const QUESTIONS_LIST: Question[] = [
 export const DEFAULT_INTEGRATIONS_CONFIG: IntegrationConfig = {
   webhookUrl: 'https://seu-webhook.com/leads',
   n8nUrl: 'https://n8n.suaempresa.com/webhook/sense-sales',
-  supabaseUrl: 'https://xyz.supabase.co',
-  supabaseAnonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSJ9...',
+  supabaseUrl: '',
+  supabaseAnonKey: '',
   metaPixelId: '1378981757464908',
   gaTrackingId: 'G-XXXXXXXXXX',
   gtmId: 'GTM-XXXXXXX',

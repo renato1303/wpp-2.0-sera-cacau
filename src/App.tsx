@@ -20,6 +20,19 @@ export default function App() {
     return 'https://api.whatsapp.com/send/?phone=5515981669784&text=Ol%C3%A1.+tudo+bem%3F+Acabei+de+preencher+o+formul%C3%A1rio+da+Ser%C3%A1+Cacau.&type=phone_number&app_absent=0';
   });
 
+  // Calendly scheduling URL
+  const [calendlyUrl] = useState<string>(() => {
+    const config = getResolvedIntegrationsConfig();
+    const base = config.calendlyUrl || 'https://calendly.com/comercial-seracacau/30min';
+    if (typeof window !== 'undefined' && window.location.search) {
+      const search = window.location.search.replace(/^\?/, '');
+      if (search) {
+        return `${base}${base.includes('?') ? '&' : '?'}${search}`;
+      }
+    }
+    return base;
+  });
+
   // Load and initialize marketing and analytics scripts (Meta Pixel, Google Analytics, GTM) on mount
   useEffect(() => {
     const config: IntegrationConfig = getResolvedIntegrationsConfig();
@@ -340,7 +353,7 @@ export default function App() {
 
       {/* Main Container: ONLY THE THANK YOU PAGE */}
       <main className="w-full mx-auto flex-1 flex flex-col items-center justify-center z-10 py-6 my-auto max-w-xl px-4 sm:px-6">
-        <ThankYouPage redirectUrl={commercialUrl} />
+        <ThankYouPage redirectUrl={commercialUrl} calendlyUrl={calendlyUrl} />
       </main>
 
       {/* Footer bar matching reference aesthetics */}

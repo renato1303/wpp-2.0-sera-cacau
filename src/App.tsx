@@ -15,9 +15,19 @@ export default function App() {
   });
   const [adminLoginError, setAdminLoginError] = useState<string | null>(null);
 
-  // Commercial team contact URL
+  // Commercial team contact URL with dynamic kit/comboEscolhido message customization
   const [commercialUrl] = useState<string>(() => {
-    return 'https://api.whatsapp.com/send/?phone=5515981669784&text=Ol%C3%A1.+tudo+bem%3F+Acabei+de+preencher+o+formul%C3%A1rio+da+Ser%C3%A1+Cacau.&type=phone_number&app_absent=0';
+    let baseUrl = 'https://api.whatsapp.com/send/?phone=5515981669784&text=Ol%C3%A1.+tudo+bem%3F+Acabei+de+preencher+o+formul%C3%A1rio+da+Ser%C3%A1+Cacau.&type=phone_number&app_absent=0';
+    if (typeof window !== 'undefined' && window.location.search) {
+      const urlParams = new URLSearchParams(window.location.search);
+      const kitEscolhido = urlParams.get('kit') || urlParams.get('comboEscolhido');
+      if (kitEscolhido) {
+        console.log('Kit escolhido pelo cliente:', kitEscolhido);
+        const customText = `Olá, tudo bem? Acabei de preencher o formulário da Será Cacau e tenho interesse no kit: ${kitEscolhido}.`;
+        baseUrl = `https://api.whatsapp.com/send/?phone=5515981669784&text=${encodeURIComponent(customText)}&type=phone_number&app_absent=0`;
+      }
+    }
+    return baseUrl;
   });
 
   // Calendly scheduling URL

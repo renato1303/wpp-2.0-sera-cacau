@@ -129,7 +129,7 @@ export default function ThankYouPage({
           <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 shrink-0 opacity-80 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
         </a>
 
-        {/* BOTÃO B: CONTINUAR COM O MEU PEDIDO PELO WHATSAPP */}
+        {/* BOTÃO B: FINALIZAR COMPRA DO KIT PELO WHATSAPP */}
         <a
           href={targetWhatsAppUrl}
           target="_blank"
@@ -143,7 +143,7 @@ export default function ThankYouPage({
               <MessageCircle className="w-5 h-5" />
             </div>
             <span className="font-display font-medium text-xs sm:text-[13px] tracking-[0.08em] uppercase leading-snug text-white">
-              CONTINUAR COM O MEU PEDIDO PELO WHATSAPP
+              FINALIZAR COMPRA DO KIT PELO WHATSAPP
             </span>
           </div>
           <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 shrink-0 text-[#25D366] opacity-80 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />

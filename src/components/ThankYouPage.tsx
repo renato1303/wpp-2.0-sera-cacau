@@ -108,45 +108,45 @@ export default function ThankYouPage({
       </p>
 
       {/* Exatamente os 2 botões solicitados: BOTÃO A e BOTÃO B */}
-      <div className="pt-2 space-y-3.5">
-        {/* BOTÃO A: AGENDAR UMA CONSULTORIA GRATUITA COM O TIME COMERCIAL */}
+      <div className="pt-2 space-y-4">
+        {/* BOTÃO A: AGENDAR MINHA CONSULTORIA COMERCIAL GRATUITA */}
         <a
           href={targetCalendlyUrl}
           target="_blank"
           rel="noopener noreferrer"
           onClick={handleCalendlyClick}
-          className="group w-full bg-[#C88452] hover:bg-[#B57242] active:bg-[#A46336] text-white px-5 sm:px-6 py-4.5 sm:py-5 rounded-[4px] transition-all flex items-center justify-between gap-3 cursor-pointer shadow-lg hover:shadow-[#C88452]/25 hover:translate-y-[-1px] no-underline text-left"
+          className="group w-full bg-[#C88452] hover:bg-[#B57242] text-white px-6 py-4 rounded-lg shadow-md hover:shadow-lg transition-all flex items-center justify-between gap-4 cursor-pointer hover:-translate-y-0.5 no-underline text-left font-sans"
           id="btn-calendly-schedule"
         >
-          <div className="flex items-center gap-3.5 sm:gap-4 min-w-0">
-            <div className="w-10 h-10 rounded-full bg-white/15 flex items-center justify-center shrink-0 text-white">
-              <Calendar className="w-5 h-5" />
-            </div>
-            <span className="font-display font-medium text-xs sm:text-[13px] tracking-[0.08em] uppercase leading-snug text-white">
-              AGENDAR UMA CONSULTORIA GRATUITA COM O TIME COMERCIAL
+          <div className="flex items-center gap-3.5 min-w-0">
+            <Calendar className="w-5 h-5 text-white shrink-0 drop-shadow-sm" />
+            <span className="font-bold text-sm sm:text-base tracking-wide uppercase text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.4)]">
+              Agendar minha consultaria comercial gratuita
             </span>
           </div>
-          <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 shrink-0 opacity-80 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
+          <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 shrink-0 text-white group-hover:translate-x-1 transition-all drop-shadow-sm" />
         </a>
 
-        {/* BOTÃO B: FINALIZAR COMPRA DO KIT PELO WHATSAPP */}
+        {/* BOTÃO B: FINALIZAR MEU PEDIDO NO WHATSAPP */}
         <a
           href={targetWhatsAppUrl}
           target="_blank"
           rel="noopener noreferrer"
           onClick={handleWhatsAppClick}
-          className="group w-full bg-[#182B1F] hover:bg-[#1E3827] active:bg-[#132219] border border-[#25D366]/40 hover:border-[#25D366]/80 text-white px-5 sm:px-6 py-4.5 sm:py-5 rounded-[4px] transition-all flex items-center justify-between gap-3 cursor-pointer shadow-lg hover:shadow-[#25D366]/20 hover:translate-y-[-1px] no-underline text-left"
+          className="group w-full bg-[#25D366] hover:bg-[#22bf5b] text-white px-6 py-4 rounded-lg shadow-md hover:shadow-lg transition-all flex items-center justify-between gap-4 cursor-pointer hover:-translate-y-0.5 no-underline text-left font-sans"
           id="btn-whatsapp-order"
         >
-          <div className="flex items-center gap-3.5 sm:gap-4 min-w-0">
-            <div className="w-10 h-10 rounded-full bg-[#25D366]/20 border border-[#25D366]/40 flex items-center justify-center shrink-0 text-[#25D366]">
-              <MessageCircle className="w-5 h-5" />
-            </div>
-            <span className="font-display font-medium text-xs sm:text-[13px] tracking-[0.08em] uppercase leading-snug text-white">
-              FINALIZAR COMPRA DO KIT PELO WHATSAPP
+          <div className="flex items-center gap-3.5 min-w-0">
+            <img 
+              src="/whatsapp-logo.png" 
+              alt="WhatsApp" 
+              className="w-6 h-6 object-contain shrink-0 drop-shadow-sm" 
+            />
+            <span className="font-bold text-sm sm:text-base tracking-wide uppercase text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.4)]">
+              Finalizar meu pedido no WhatsApp
             </span>
           </div>
-          <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 shrink-0 text-[#25D366] opacity-80 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
+          <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 shrink-0 text-white group-hover:translate-x-1 transition-all drop-shadow-sm" />
         </a>
       </div>
     </motion.div>
